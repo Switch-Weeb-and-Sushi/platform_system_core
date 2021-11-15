@@ -66,12 +66,12 @@ class GateKeeperProxy : public BnGateKeeperService {
   public:
     GateKeeperProxy() {
         clear_state_if_needed_done = false;
-        hw_device = IGatekeeper::getService();
+        //hw_device = IGatekeeper::getService();
         is_running_gsi = android::base::GetBoolProperty(android::gsi::kGsiBootedProp, false);
 
-        if (!hw_device) {
+        //if (!hw_device) {
             LOG(ERROR) << "Could not find Gatekeeper device, which makes me very sad.";
-        }
+        //}
     }
 
     virtual ~GateKeeperProxy() {}
